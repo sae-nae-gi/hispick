@@ -25,6 +25,7 @@ module.exports = {
       processor: 'svelte3/svelte3'
     }
   ],
+  ignorePatterns: ["**/*.d.ts", "**/vendor/*.js"],
   rules: {
     "linebreak-style": 0,
     "import/no-dynamic-require": 0,
@@ -45,7 +46,6 @@ module.exports = {
     "react/prop-types": 0,
     "no-empty-pattern": 0,
     "no-alert": 0,
-    "react-hooks/exhaustive-deps": 0
   },
   settings: {
     'svelte3/typescript': () => require('typescript'), // pass the TypeScript package to the Svelte plugin
