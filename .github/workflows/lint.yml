@@ -26,11 +26,11 @@ jobs:
       run: |
         yarn lint
     - name: lint test result
-    uses: 8398a7/action-slack@v3
-    with:
-      status: ${{job.status}}
-      fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-      author_name: dante01yoon
-    env:
-      SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
-    if: always()
+      - uses: 8398a7/action-slack@v3
+      with:
+        status: ${{job.status}}
+        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+        author_name: dante01yoon
+      env:
+        SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
+      if: always()
