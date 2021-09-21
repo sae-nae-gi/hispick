@@ -32,5 +32,5 @@ jobs:
         fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
         author_name: dante01yoon
       env:
-        SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
+        SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
       if: always()
