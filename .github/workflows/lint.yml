@@ -25,8 +25,8 @@ jobs:
     - name: lint test
       run: |
         yarn lint
-    - name: lint test result
     - uses: 8398a7/action-slack@v3
+    - name: lint test result
       with:
         status: ${{job.status}}
         fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
