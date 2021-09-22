@@ -1,6 +1,13 @@
 /**  noto sans */
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 
+@font-face {
+	font-family: "SangSangFlowerRoad";
+	font-style: normal;
+	src: url("SangSangFlowerRoad.otf");
+	unicode-range: U+AC00-D7A3, U+0030-0039;
+}
+
 html,body {
 	height: 100%;
 }
@@ -39,6 +46,14 @@ code {
 	background-color: #f0f0f0;
 	padding: 0.2em 0.4em;
 	border-radius: 2px;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style: none;
 }
 
 div#sapper {
