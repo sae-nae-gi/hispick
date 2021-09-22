@@ -5,3 +5,4 @@
 [x] svelte
 [x] sapper
 [x] storybook
+[x] typescript
