@@ -1,0 +1,8 @@
+.eslintrc.js
+public/
+src/dist/
+node_modules/
+__sapper__/dev
+.storybook
+.github
+.husky
