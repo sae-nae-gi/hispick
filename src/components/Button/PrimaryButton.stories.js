@@ -12,5 +12,5 @@ export const PrimaryButton = Template.bind();
 
 PrimaryButton.args = {
   handleClick: () => { console.log("clicked") },
-  label: "텍스트"
+  label: "텍스트",
 }
