@@ -1,9 +1,28 @@
+/**  noto sans */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+@font-face {
+	font-family: "SangSangFlowerRoad";
+	font-style: normal;
+	src: url("SangSangFlowerRoad.otf");
+	unicode-range: U+AC00-D7A3, U+0030-0039;
+}
+
+html,body {
+}
+	/* background-color: #3c3b3f; */
+
 body {
+	background-color: #f0f5f9;
 	margin: 0;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
 	color: #333;
+}
+
+* {
+	font-family: Noto Sans KR, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,12 +40,23 @@ a {
 }
 
 code {
-	font-family: menlo, inconsolata, monospace;
+	font-family: Noto Sans KR, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: calc(1em - 2px);
 	color: #555;
 	background-color: #f0f0f0;
 	padding: 0.2em 0.4em;
 	border-radius: 2px;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+div#sapper {
 }
 
 @media (min-width: 400px) {

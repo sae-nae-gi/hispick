@@ -32,6 +32,7 @@
       "node",
     ],
     "skipLibCheck": true,
-    "sourceMap": false
+    "sourceMap": false,
+    "noImplicitAny": true,
   }
 }

@@ -46,6 +46,9 @@ module.exports = {
     "react/prop-types": 0,
     "no-empty-pattern": 0,
     "no-alert": 0,
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
   },
   settings: {
     'svelte3/typescript': () => require('typescript'), // pass the TypeScript package to the Svelte plugin
