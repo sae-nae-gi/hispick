@@ -1,0 +1,60 @@
+body {
+    overflow-x: hidden;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    z-index: -10;
+    width: 100%;
+    height: 600px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    -webkit-box-shadow: 1px 0 40px 3px #bdbdbd;
+    box-shadow: 1px 0 40px 3px #bdbdbd; 
+    position: absolute;
+
+    &.active {
+        left: calc(50% - 7.5rem);
+    width: 15rem;
+    height: 24rem;
+    background-color: rgb(166, 222, 255);
+    z-index:100;
+    }
+
+    &-mousedown{
+        width: 15.7rem;
+        height: 25.2rem;
+    }
+
+    &.inactive-l1{
+        width: 14.85rem;
+        height: 23.6rem;
+        position: absolute;
+        left: calc(50% - 9rem);
+        top: 0.5rem;
+        z-index: 50;
+        background-color: rgba(189, 133, 253, 0.5);
+    }
+
+    &.inactive-l2{
+        width: 14.6rem;
+        height: 23.4rem;
+        position: absolute;
+        left: calc(50% - 10rem);
+        top: 0.75rem;
+        z-index: 0;
+        background-color: rgba(204, 242, 252, 0.8);
+    }
+}

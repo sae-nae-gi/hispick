@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="./index.css" >
+    </head>
+    <body>
+        <div class="container">
+            <div class="card active">
+                Card
+            </div>
+            <div class="card inactive-l1">
+                Cards
+            </div>
+
+            <div class="card inactive-l2">
+                Cards
+            </div>
+
+            <div class="card inactive-r1">
+                Cards
+            </div>
+
+            <div class="card inactive-r2">
+                Cards
+            </div>
+        </div>
+    </body>
+
+    <script>
+        const card = document.querySelector('.card');
+
+        const {left, width} = card.getBoundingClientRect();
+        const initCenter = left+width/2;
+        
+
+        card.onmousedown  = (e) => {
+
+            /* Mouse DOWN */
+            card.classList.add('card-mousedown');
+
+            let shiftX = e.clientX - card.getBoundingClientRect().left;
+            let shiftY = e.clientY - card.getBoundingClientRect().top;
+
+
+            
+            moveAt(e.pageX, e.pageY);
+
+            function moveAt(pageX, pageY){
+                card.style.left = pageX - shiftX + 'px';
+                /* Move only horizontally */
+                //card.style.top = pageY-shiftY + 'px';
+            }
+
+            function moveCenter(centerX){
+                card.style.left = centerX-width/2+'px';
+            }
+
+            /* Mouse Move */
+            function onMouseMove(e){
+                moveAt(e.pageX, e.pageY);
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+
+
+            /* Mouse UP */
+            card.onmouseup = (e) => {
+
+                const {left, width} = card.getBoundingClientRect();
+                const center = left+width/2;
+                // If it was put on next area
+                console.log(initCenter-width, center, initCenter+width);
+                
+                if(e.pageX > initCenter+width/2){
+                    console.log('next');
+                }
+                else if(e.pageX < initCenter-width/2){
+                    console.log('prev');
+                }else {
+                    moveCenter(initCenter);
+                }
+
+                card.classList.remove('card-mousedown');
+                document.removeEventListener('mousemove', onMouseMove);
+                card.onmouseup = null;
+            }
+
+        };
+
+        card.ondragstart = () => {
+            return false;
+        }
+
+    
+    </script>
+</html>
