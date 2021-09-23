@@ -33,6 +33,6 @@
     ],
     "skipLibCheck": true,
     "sourceMap": false,
-    "noImplicitAny": true
+    "noImplicitAny": true,
   }
 }
