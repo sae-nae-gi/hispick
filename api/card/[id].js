@@ -2,14 +2,14 @@ const send = require("@polka/send-type");
 import { initDB, selectQuery } from "./_helpers";
 import humps from "humps";
 
-export const get = async (req, res) => {
+module.exports = async (req, res) => {
   const { db } = initDB();
   const { id } = req.params;
 
   try {
     db.query(`SELECT * from words WHERE show_id='${id}'`, (err, results) => {
       if (err) {
-        res.end(JSON.stringify({
+        res.status(500).send(JSON.stringify({
           type: "DB_QUERY_ERROR",
           message: err
         }))
@@ -17,7 +17,7 @@ export const get = async (req, res) => {
       }
       console.log({ results });
       if (results.length > 0) {
-        res.end(JSON.stringify(humps.camelizeKeys(results[0])));
+        res.status(200).send(JSON.stringify(humps.camelizeKeys(results[0])));
       }
       else {
         res.end(JSON.stringify(null))

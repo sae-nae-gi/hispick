@@ -2,7 +2,7 @@ const send = require("@polka/send-type")
 import { initDB, selectQuery } from "./_helpers";
 import humps from "humps";
 
-export const get = async (req, res) => {
+module.exports = async (req, res) => {
   const { db } = initDB();
 
   try {
@@ -15,7 +15,7 @@ export const get = async (req, res) => {
         return err;
       }
       console.log({ results });
-      res.end(JSON.stringify(humps.camelizeKeys(results)));
+      res.status(200).send(JSON.stringify(humps.camelizeKeys(results)));
     }
     );
   }
