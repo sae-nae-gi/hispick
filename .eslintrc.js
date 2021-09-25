@@ -13,7 +13,8 @@ module.exports = {
   ],
   env: {
     es6: true,
-    browser: true
+    browser: true,
+    node: true
   },
   plugins: [
     'svelte3',
@@ -27,16 +28,11 @@ module.exports = {
   ],
   ignorePatterns: ["**/*.d.ts", "**/vendor/*.js"],
   rules: {
-    "linebreak-style": 0,
     "import/no-dynamic-require": 0,
     "import/no-unresolved": 0,
     "import/prefer-default-export": 0,
     "global-require": 0,
     "import/no-extraneous-dependencies": 0,
-    "jsx-quotes": ["error", "prefer-single"],
-    "react/jsx-props-no-spreading": 0,
-    "react/forbid-prop-types": 0,
-    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "import/extensions": 0,
     "no-use-before-define": 0,
     "@typescript-eslint/no-empty-interface": 0,
