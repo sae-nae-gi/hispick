@@ -13,7 +13,8 @@
     "lint-fix": "eslint ''**/*.{ts,svelte} --ext .ts,.svelte --fix",
     "lint-staged": "lint-staged",
     "start-storybook": "start-storybook",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "aws:development": "aws s3 cp s3://hanmoa-bucket/hispick/hispick.env ./.env"
   },
   "lint-staged": {
     "**/*.{ts,svelte}": [
@@ -21,7 +22,13 @@
     ]
   },
   "dependencies": {
+    "@polka/send-type": "^0.5.2",
+    "@rollup/plugin-json": "^4.1.0",
     "compression": "^1.7.1",
+    "dotenv": "^10.0.0",
+    "humps": "^2.0.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.0",
     "polka": "next",
     "sirv": "^1.0.0"
   },
