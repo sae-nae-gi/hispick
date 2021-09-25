@@ -1,7 +1,7 @@
 <script context="module">
   export async function preload() {
     try {
-      const res = await this.fetch('api/card.json');
+      const res = await this.fetch('api/card');
       if (res.ok) {
         const cards = await res.json();
         console.log({ cards });
