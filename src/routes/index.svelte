@@ -10,7 +10,7 @@
   import land_background_under from '../../static/lands.png';
 
   const handleClick = () => {
-    goto('/card');
+    goto('/card?God=isGood');
   };
 
   const pickedCards = getRandomCard(4);

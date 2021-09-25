@@ -24,3 +24,7 @@ export function initDB() {
   return { db };
 
 }
+
+export const getRandomCardIndex = (card) => {
+  return Math.trunc(Math.random() * card.length + 1)
+}
