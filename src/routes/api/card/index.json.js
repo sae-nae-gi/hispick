@@ -20,7 +20,6 @@ export const get = async (req, res) => {
     );
   }
   catch (e) {
-    console.error("index.json.js get: ", e);
     res.status(500).json({ error: e.message });
     send(res, 500, e)
   }
