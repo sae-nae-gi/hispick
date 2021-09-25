@@ -1,20 +1,8 @@
 <script lang="ts">
-  // let imageBackgrounds = [
-  //   'sky.jpeg',
-  //   'sky2.jpeg',
-  //   'sky3.jpeg',
-  //   'sky4.jpeg',
-  //   'sky5.jpeg',
-  //   'sky6.jpeg',
-  //   'sky7.jpeg',
-  // ];
-
-  // const getRandomImage = () => {
-  //   return imageBackgrounds[Math.trunc(Math.random() * imageBackgrounds.length)];
-  // }; getRandomImage()
+  export let className: string = '';
 </script>
 
-<section>
+<section class={className}>
   <div class="gradient" />
   <slot />
 </section>

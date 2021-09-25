@@ -17,11 +17,7 @@
 </script>
 
 <script>
-  import { onMount } from 'svelte';
   export let cards;
-  onMount(() => {
-    console.log({ cards });
-  });
 </script>
 
 <section>card page</section>

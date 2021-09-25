@@ -44,6 +44,30 @@ export {
   flower_yellow,
 }
 
+export const cards = [
+  tree_black,
+  tree_blue,
+  tree_gold,
+  flower_purple,
+  flower_sky,
+  flower_yellow,
+  simple_black,
+  simple_blue,
+  simple_gold,
+  simple_pink,
+  simple_sky,
+  simple_purple,
+  simple_yellow,
+  tree_pink,
+  tree_purple,
+  tree_sky,
+  tree_yellow,
+  flower_black,
+  flower_blue,
+  flower_gray,
+  flower_pink,
+]
+
 export const getRandomCard = (number) => {
   if (number <= 0) {
     throw Error("number should be larger than zero");
@@ -51,29 +75,7 @@ export const getRandomCard = (number) => {
 
   const cardCounts = Math.trunc(number);
 
-  const cards = [
-    tree_black,
-    tree_blue,
-    tree_gold,
-    flower_purple,
-    flower_sky,
-    flower_yellow,
-    simple_black,
-    simple_blue,
-    simple_gold,
-    simple_pink,
-    simple_sky,
-    simple_purple,
-    simple_yellow,
-    tree_pink,
-    tree_purple,
-    tree_sky,
-    tree_yellow,
-    flower_black,
-    flower_blue,
-    flower_gray,
-    flower_pink,
-  ]
+
   let remains = cardCounts;
   const pickedCards = [];
   const dict = {};
