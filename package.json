@@ -13,7 +13,8 @@
     "lint-fix": "eslint ''**/*.{ts,svelte} --ext .ts,.svelte --fix",
     "lint-staged": "lint-staged",
     "start-storybook": "start-storybook",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "aws:development": "aws s3 cp s3://hanmoa-bucket/hispick/hispick.env ./.env"
   },
   "lint-staged": {
     "**/*.{ts,svelte}": [
