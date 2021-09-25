@@ -3,7 +3,7 @@
     try {
       const { params } = page;
 
-      const res = await this.fetch(`api/card/${params.id}`);
+      const res = await fetch(`api/card/${params.id}`);
       if (res.ok) {
         const card = await res.json();
         console.log({ card });
