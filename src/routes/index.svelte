@@ -134,7 +134,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 450px;
+    max-width: 450px;
     height: 300px;
   }
 
