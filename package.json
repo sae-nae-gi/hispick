@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
-    "export": "sapper export --entry \"/ index /hidden /api/card /card /api/card/sdf\"",
+    "export": "sapper export --entry \"/ index /hidden /api/card /card /api/card/sdf /404\"",
+    "postexport": "mv __sapper__/export/404/index.html __sapper__/export/404.html",
     "start": "node __sapper__/build",
     "serve": "npx serve __sapper__/export",
     "validate": "svelte-check",

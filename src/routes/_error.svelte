@@ -17,10 +17,6 @@
   </div>
 {/if}
 
-{#if dev && error.stack}
-  <pre>{error.stack}</pre>
-{/if}
-
 <style>
   * {
     font-family: SangSangFlowerRoad, Noto Sans KR, Roboto;
