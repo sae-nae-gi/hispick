@@ -19,6 +19,13 @@ import flower_pink from "../../static/card/flower-pink.png"
 import flower_purple from "../../static/card/flower-purple.png"
 import flower_sky from "../../static/card/flower-sky.png"
 import flower_yellow from "../../static/card/flower-yellow.png"
+import star_black from "../../static/card/star-black.png"
+import star_blue from "../../static/card/star-blue.png"
+import star_pink from "../../static/card/star-pink.png"
+import star_purple from "../../static/card/star-purple.png"
+import star_sky from "../../static/card/star-sky.png"
+import star_yellow from "../../static/card/star-yellow.png"
+
 
 export {
   simple_black,
@@ -42,6 +49,12 @@ export {
   flower_purple,
   flower_sky,
   flower_yellow,
+  star_black,
+  star_blue,
+  star_pink,
+  star_purple,
+  star_sky,
+  star_yellow,
 }
 
 export const cards = [
@@ -66,6 +79,12 @@ export const cards = [
   flower_blue,
   flower_gray,
   flower_pink,
+  star_black,
+  star_blue,
+  star_pink,
+  star_purple,
+  star_sky,
+  star_yellow,
 ]
 
 export const getRandomCard = (number) => {
