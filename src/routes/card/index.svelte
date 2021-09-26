@@ -1,20 +1,28 @@
 <script context="module">
+  import { cardStore, cardsStore } from '../../store/card.store';
+
   export async function preload(page) {
-    try {
-      const { query } = page;
-      const res = await this.fetch('api/card.json?' + new URLSearchParams(query));
-      if (res.ok) {
-        const card = await res.json();
-        console.log({ card });
-        return { card };
-      } else {
-        const message = await res.text();
-        this.error(res.statusCode, message);
+    let card;
+    let cardsProps;
+    if (page.query.id) {
+      cardsStore.subscribe((cards) => {
+        const foundCard = (cards.contents || []).find((item) => item.showId === page.query.id);
+        if (foundCard) {
+          card = { ...foundCard, isEmpty: false };
+        } else {
+          card = { isEmpty: true };
+        }
+        cardsProps = cards;
+      });
+    } else {
+      cardsProps = [];
+      cardStore.subscribe((value) => (card = value));
+      if (!Object.entries(card).length) {
+        card = { isEmpty: true };
       }
-    } catch (e) {
-      this.error(500, e);
     }
-    return { card: null };
+
+    return { card, cards: cardsProps };
   }
 </script>
 
@@ -25,7 +33,9 @@
   import no_resource from '../../../static/no_resource.png';
 
   export let card;
-  let onAfterClicked = false;
+  export let cards;
+  console.log({ cards });
+  console.log({ card });
 </script>
 
 <section class="frame_wrapper">
@@ -60,6 +70,7 @@
 
   .frame_wrapper {
     position: relative;
+    padding: 20px 0;
     margin: 10px;
     @media (max-width: 295px) {
       margin: 10px 0;
