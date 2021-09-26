@@ -6,7 +6,6 @@
       if (res.ok) {
         const cards = await res.json();
         cardsStore.update(() => cards);
-        console.log({ cards });
 
         return { cards };
       } else {
@@ -37,7 +36,6 @@
   const handleClick = () => {
     cardStore.update(() => {
       const index = Math.trunc(Math.random() * cards.contents.length);
-      console.log({ index });
       return { ...cards.contents[index], isEmpty: false };
     });
     goto('/card');

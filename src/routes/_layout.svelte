@@ -22,8 +22,11 @@
 
 <script>
   import Nav from '../components/Nav.svelte';
-
+  import { setContext } from 'svelte';
+  export let cards;
   export let segment;
+
+  setContext('cards', cards);
 </script>
 
 <main>

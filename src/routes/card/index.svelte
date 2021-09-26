@@ -1,41 +1,29 @@
-<script context="module">
-  import { cardStore, cardsStore } from '../../store/card.store';
-
-  export async function preload(page) {
-    let card;
-    let cardsProps;
-    if (page.query.id) {
-      cardsStore.subscribe((cards) => {
-        const foundCard = (cards.contents || []).find((item) => item.showId === page.query.id);
-        if (foundCard) {
-          card = { ...foundCard, isEmpty: false };
-        } else {
-          card = { isEmpty: true };
-        }
-        cardsProps = cards;
-      });
-    } else {
-      cardsProps = [];
-      cardStore.subscribe((value) => (card = value));
-      if (!Object.entries(card).length) {
-        card = { isEmpty: true };
-      }
-    }
-
-    return { card, cards: cardsProps };
-  }
-</script>
-
 <script>
   import { tree_pink } from '../../utils/pickCards';
   import WideCard from '../../components/Card/WideCard.svelte';
   import BackgroundFrame from '../../components/Frame/BackgroundFrame.svelte';
   import no_resource from '../../../static/no_resource.png';
+  import { getContext } from 'svelte';
+  import { stores } from '@sapper/app';
+  import { cardStore } from '../../store/card.store';
 
-  export let card;
-  export let cards;
-  console.log({ cards });
-  console.log({ card });
+  const cardsContext = getContext('cards');
+  const { page } = stores();
+  let card;
+  if ($page.query.id) {
+    const foundCard = (cardsContext.contents || []).find((item) => item.showId === $page.query.id);
+    if (foundCard) {
+      card = { ...foundCard, isEmpty: false };
+    } else {
+      card = { isEmpty: true };
+    }
+  } else {
+    if (Object.entries($cardStore).length) {
+      card = $cardStore;
+    } else {
+      card = { isEmpty: true };
+    }
+  }
 </script>
 
 <section class="frame_wrapper">
