@@ -10,7 +10,7 @@
   <title>말씀뽑기 {status}</title>
 </svelte:head>
 {#if status === 404}
-  <p class="not_found" style="background: url({not_found}) center/cover no-repeat">{error.message}</p>
+  <p class="not_found" style="background: url({not_found}) center/cover no-repeat" />
   <div class="eden_statement">
     <div>저런, 에덴동산을 벗어났어요!</div>
     <div><a href="."> 여기</a>를 눌러보세요!</div>
