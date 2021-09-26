@@ -6,7 +6,9 @@
   import { getContext } from 'svelte';
   import { stores } from '@sapper/app';
   import { cardStore } from '../../store/card.store';
+  import { cards as cardImages } from '../../utils/pickCards';
 
+  const cardImage = cardImages[Math.trunc(Math.random() * cardImages.length)];
   const cardsContext = getContext('cards');
   const { page } = stores();
   let card;
@@ -30,7 +32,7 @@
   <BackgroundFrame className="override_background_frame">
     {#if !card.isEmpty}
       <div class="card_wrapper">
-        <WideCard title={card.title} content={card.text} imageUrl={tree_pink} />
+        <WideCard title={card.title} content={card.text} imageUrl={cardImage} />
       </div>
     {:else}
       <div class="no_resource" style="background: url({no_resource}) center/cover no-repeat;" />
