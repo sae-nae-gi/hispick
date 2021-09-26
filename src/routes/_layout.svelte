@@ -1,3 +1,25 @@
+<script context="module">
+  import { cardsStore } from '../store/card.store';
+  export async function preload() {
+    try {
+      const res = await this.fetch('api/card.json');
+      if (res.ok) {
+        const cards = await res.json();
+        cardsStore.update(() => cards);
+        console.log({ cards });
+
+        return { cards };
+      } else {
+        const message = await res.text();
+        this.error(res.statusCode, message);
+      }
+    } catch (e) {
+      this.error(500, e);
+    }
+    return { cards: { contents: [], isEmpty: true } };
+  }
+</script>
+
 <script>
   import Nav from '../components/Nav.svelte';
 

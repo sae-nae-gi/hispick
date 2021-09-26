@@ -1,3 +1,25 @@
+<script context="module">
+  import { cardsStore } from '../store/card.store';
+  export async function preload() {
+    try {
+      const res = await this.fetch('api/card.json');
+      if (res.ok) {
+        const cards = await res.json();
+        cardsStore.update(() => cards);
+        console.log({ cards });
+
+        return { cards };
+      } else {
+        const message = await res.text();
+        this.error(res.statusCode, message);
+      }
+    } catch (e) {
+      this.error(500, e);
+    }
+    return { cards: { contents: [], isEmpty: true } };
+  }
+</script>
+
 <script lang="ts">
   import { onMount } from 'svelte';
   import { goto } from '@sapper/app';
@@ -8,9 +30,17 @@
   import { getRandomCard } from '../utils/pickCards';
   import introduceIllustration from '../../static/introduce_illustration.png';
   import land_background_under from '../../static/lands.png';
+  import { cardStore } from '../store/card.store';
+  import type { Cards } from '../store/card.store';
 
+  export let cards: Cards;
   const handleClick = () => {
-    goto('/card?God=isGood');
+    cardStore.update(() => {
+      const index = Math.trunc(Math.random() * cards.contents.length);
+      console.log({ index });
+      return { ...cards.contents[index], isEmpty: false };
+    });
+    goto('/card');
   };
 
   const pickedCards = getRandomCard(4);
@@ -40,7 +70,7 @@
 
   let sliderContainer: any;
   let hasAnimationStyle = false;
-  const refinedDatas = datas.map((data, index) => {
+  let refinedDatas = cards.contents.map((data, index) => {
     data.imageUrl = pickedCards[index];
     return data;
   });
@@ -65,26 +95,16 @@
     <ul
       class="wide_slider {sliderAnimationClass}"
       bind:this={sliderContainer}
-      style="animation-duration: {datas.length * 2 * 10}s"
+      style="animation-duration: {refinedDatas.length * 2 * 10}s"
     >
       {#each refinedDatas as data (data.title)}
         <li>
-          <WideCard
-            title={data.title}
-            content={data.content}
-            imageUrl={data.imageUrl}
-            className="wide_card"
-          />
+          <WideCard title={data.title} content={data.text} imageUrl={data.imageUrl} className="wide_card" />
         </li>
       {/each}
-      {#each datas as data (data.title)}
+      {#each refinedDatas as data (data.title)}
         <li>
-          <WideCard
-            title={data.title}
-            content={data.content}
-            className="wide_card"
-            imageUrl={data.imageUrl}
-          />
+          <WideCard title={data.title} content={data.text} className="wide_card" imageUrl={data.imageUrl} />
         </li>
       {/each}
     </ul>
