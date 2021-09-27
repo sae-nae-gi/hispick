@@ -1,8 +1,8 @@
 <script context="module">
-  import { cardsStore } from '../store/card.store';
+  import { cardsStore } from "../store/card.store";
   export async function preload() {
     try {
-      const res = await this.fetch('api/card.json');
+      const res = await this.fetch("api/card.json");
       if (res.ok) {
         const cards = await res.json();
         cardsStore.update(() => cards);
@@ -20,17 +20,17 @@
 </script>
 
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { goto } from '@sapper/app';
-  import PrimaryButton from '../components/Button/PrimaryButton.svelte';
-  import BackgroundFrame from '../components/Frame/BackgroundFrame.svelte';
-  import WideCard from '../components/Card/WideCard.svelte';
-  import MainHeader from '../components/Header/MainHeader.svelte';
-  import { getRandomCard } from '../utils/pickCards';
-  import introduceIllustration from '../../static/introduce_illustration.png';
-  import land_background_under from '../../static/lands.png';
-  import { cardStore } from '../store/card.store';
-  import type { Cards } from '../store/card.store';
+  import { onMount } from "svelte";
+  import { goto } from "@sapper/app";
+  import PrimaryButton from "../components/Button/PrimaryButton.svelte";
+  import BackgroundFrame from "../components/Frame/BackgroundFrame.svelte";
+  import WideCard from "../components/Card/WideCard.svelte";
+  import MainHeader from "../components/Header/MainHeader.svelte";
+  import { getRandomCard } from "../utils/pickCards";
+  import introduceIllustration from "../../static/introduce_illustration.png";
+  import land_background_under from "../../static/lands.png";
+  import { cardStore } from "../store/card.store";
+  import type { Cards } from "../store/card.store";
 
   export let cards: Cards;
   const handleClick = () => {
@@ -38,7 +38,7 @@
       const index = Math.trunc(Math.random() * cards.contents.length);
       return { ...cards.contents[index], isEmpty: false };
     });
-    goto('/card');
+    goto("/card");
   };
 
   const pickedCards = getRandomCard(4);
@@ -49,20 +49,20 @@
     imageUrl?: string;
   }> = [
     {
-      title: '요한복음 14 : 27',
-      content: '평안을 너희에게 끼치노니\n곧 나의 평안을 너희에게 주노라',
+      title: "요한복음 14 : 27",
+      content: "평안을 너희에게 끼치노니\n곧 나의 평안을 너희에게 주노라",
     },
     {
-      title: '시편 23 : 1',
-      content: '여호와는 나의 목자시니\n내게 부족함이 없으리로다',
+      title: "시편 23 : 1",
+      content: "여호와는 나의 목자시니\n내게 부족함이 없으리로다",
     },
     {
-      title: '아가 2 : 10',
-      content: '나의 사랑, 내 어여쁜 자야\n일어나서 함께 가자',
+      title: "아가 2 : 10",
+      content: "나의 사랑, 내 어여쁜 자야\n일어나서 함께 가자",
     },
     {
-      title: '빌립보서 2 : 5',
-      content: '너희 안에 이 마음을 품어라\n곧 그리스도의 마음이니',
+      title: "빌립보서 2 : 5",
+      content: "너희 안에 이 마음을 품어라\n곧 그리스도의 마음이니",
     },
   ];
 
@@ -72,7 +72,7 @@
     data.imageUrl = pickedCards[index];
     return data;
   });
-  $: sliderAnimationClass = hasAnimationStyle ? 'slide_in' : '';
+  $: sliderAnimationClass = hasAnimationStyle ? "slide_in" : "";
 
   onMount(() => {
     hasAnimationStyle = true;
@@ -91,7 +91,7 @@
   <meta property="twitter:image" content="og_image.png" />
 </svelte:head>
 <BackgroundFrame>
-  <MainHeader title={'2022'} description={['내게 보내주신', '하나님의 말씀']} />
+  <MainHeader title={"2022"} description={["내게 보내주신", "하나님의 말씀"]} />
   <section class="introduce_illustration_cover">
     <article>
       <div class="introduce_illustration_image" style="background-image: url({introduceIllustration});" />
@@ -119,7 +119,7 @@
     <div class="background_under" style="background: url({land_background_under}) center/cover no-repeat;" />
   </article>
   <article class="button_section">
-    <PrimaryButton class="primary_button" label={'말씀 확인하기'} {handleClick} />
+    <PrimaryButton class="primary_button" label={"말씀 확인하기"} {handleClick} />
   </article>
 </BackgroundFrame>
 
@@ -164,7 +164,7 @@
 
   article.wide_slider_container li {
     display: inline-block;
-    width: 271px;
+    width: 280px;
 
     &:not(:last-of-type) {
       margin-right: 24px;

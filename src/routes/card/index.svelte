@@ -1,15 +1,15 @@
 <script>
-  import { tree_pink } from '../../utils/pickCards';
-  import WideCard from '../../components/Card/WideCard.svelte';
-  import BackgroundFrame from '../../components/Frame/BackgroundFrame.svelte';
-  import no_resource from '../../../static/no_resource.png';
-  import { getContext } from 'svelte';
-  import { stores } from '@sapper/app';
-  import { cardStore } from '../../store/card.store';
-  import { cards as cardImages } from '../../utils/pickCards';
+  import { tree_pink } from "../../utils/pickCards";
+  import WideCard from "../../components/Card/WideCard.svelte";
+  import BackgroundFrame from "../../components/Frame/BackgroundFrame.svelte";
+  import no_resource from "../../../static/no_resource.png";
+  import { getContext } from "svelte";
+  import { stores } from "@sapper/app";
+  import { cardStore } from "../../store/card.store";
+  import { cards as cardImages } from "../../utils/pickCards";
 
   const cardImage = cardImages[Math.trunc(Math.random() * cardImages.length)];
-  const cardsContext = getContext('cards');
+  const cardsContext = getContext("cards");
   const { page } = stores();
   let card;
   if ($page.query.id) {
@@ -86,7 +86,7 @@
 
   .card_wrapper {
     animation: fadein 3s;
-    width: 271px;
+    width: 280px;
     margin: 0 auto;
   }
 </style>
