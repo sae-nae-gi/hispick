@@ -43,7 +43,7 @@
     left: 20px;
   }
   .card_title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     text-align: right;
     padding-right: 40px;
