@@ -8,13 +8,13 @@
 </script>
 
 <script lang="ts">
-  export let className: WideCardProps['className'];
-  export let title: WideCardProps['title'];
-  export let content: WideCardProps['content'];
-  export let imageUrl: WideCardProps['imageUrl'] = '';
+  export let className: WideCardProps["className"];
+  export let title: WideCardProps["title"];
+  export let content: WideCardProps["content"];
+  export let imageUrl: WideCardProps["imageUrl"] = "";
 </script>
 
-<div class="card_wrapper {className}" style="background: url({imageUrl}) center/cover no-repeat">
+<div class="card_wrapper {className}" style="background-image: url({imageUrl})">
   <div class="card_text_box">
     <div class="card_content">{content}</div>
     <h3 class="card_title">{title}</h3>
@@ -24,7 +24,9 @@
 <style>
   .card_wrapper {
     position: relative;
-    background-size: cover;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
     padding-top: 128%;
   }
   .card_wrapper * {
@@ -32,17 +34,19 @@
     font-family: SangSangFlowerRoad, Noto Sans KR, Roboto;
     width: 100%;
     padding: 0 16px;
+    margin: 20px 0 0 0;
   }
 
   .card_text_box {
     position: relative;
-    top: -180px;
+    top: -160px;
     left: 20px;
   }
   .card_title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     text-align: right;
+    padding-right: 40px;
     margin-top: 16px;
   }
 
@@ -50,5 +54,6 @@
     font-size: 20px;
     font-weight: 400;
     white-space: pre;
+    margin-left: 16px;
   }
 </style>
