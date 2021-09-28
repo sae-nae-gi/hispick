@@ -1,12 +1,11 @@
 <script context="module">
-  import { cardsStore } from '../store/card.store';
+  import { cardsStore } from "../store/card.store";
   export async function preload() {
     try {
-      const res = await this.fetch('api/card.json');
+      const res = await this.fetch("api/card.json");
       if (res.ok) {
         const cards = await res.json();
         cardsStore.update(() => cards);
-        console.log({ cards });
 
         return { cards };
       } else {
@@ -21,12 +20,12 @@
 </script>
 
 <script>
-  import Nav from '../components/Nav.svelte';
-  import { setContext } from 'svelte';
+  import Nav from "../components/Nav.svelte";
+  import { setContext } from "svelte";
   export let cards;
   export let segment;
 
-  setContext('cards', cards);
+  setContext("cards", cards);
 </script>
 
 <main>
