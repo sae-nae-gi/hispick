@@ -28,6 +28,9 @@
   setContext("cards", cards);
 </script>
 
+<svelte:head>
+	<script src="https://developers.kakao.com/sdk/js/kakao.min.js" ></script>
+</svelte:head>
 <main>
   <Nav {segment} />
   <slot />

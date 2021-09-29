@@ -1,7 +1,7 @@
 <script>
-  import { tree_pink } from "../../utils/pickCards";
   import WideCard from "../../components/Card/WideCard.svelte";
   import BackgroundFrame from "../../components/Frame/BackgroundFrame.svelte";
+  import KakaoButton from "../../components/Button/KakaoButton.svelte";
   import no_resource from "../../../static/no_resource.png";
   import { getContext } from "svelte";
   import { stores } from "@sapper/app";
@@ -33,6 +33,14 @@
     {#if !card.isEmpty}
       <div class="card_wrapper">
         <WideCard title={card.title} content={card.text} imageUrl={cardImage} />
+      </div>
+      <div>
+        <KakaoButton
+          description={"#성경 #하나님 #2022년 #감사 #기도 #코로나 #온택트"}
+          title={"2022년 성경 말씀 나누기"}
+          imageUrl={"https://hanmoa-bucket.s3.ap-northeast-2.amazonaws.com/hispick/introduce_illustration.png"}
+          link={`https://2022word.com/card?id=${$page.query.id || card.showId}`}
+        />
       </div>
     {:else}
       <div class="no_resource" style="background: url({no_resource}) center/cover no-repeat;" />
