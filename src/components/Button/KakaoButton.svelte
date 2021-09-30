@@ -4,6 +4,8 @@
   export let title;
   export let imageUrl;
   export let link;
+  export let className;
+
   onMount(() => {
     if(Kakao) {
       Kakao.init("473bade5b3c7ef30dc351e6df9b30045");
@@ -41,7 +43,7 @@
   
   console.log({link})
 </script>
-<div id="sns_button_container">
+<div id="kakao_button_container" class="{className}">
   <a id="kakao_link_button">
     <img
       src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
@@ -50,10 +52,9 @@
 </div>
 
 <style>
-  #sns_button_container {
+  #kakao_button_container {
     display: flex;
-    justify-content: center;;
-    width: 100%;
+    justify-content: center;
   }
   #kakao_link_button {
     display: inline-block;
