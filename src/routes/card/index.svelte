@@ -2,6 +2,8 @@
   import WideCard from "../../components/Card/WideCard.svelte";
   import BackgroundFrame from "../../components/Frame/BackgroundFrame.svelte";
   import KakaoButton from "../../components/Button/KakaoButton.svelte";
+  import CopyUrlButton from "../../components/Button/CopyUrlButton.svelte";
+  import Toast from "../../components/Toast/BasicToast.svelte";
   import no_resource from "../../../static/no_resource.png";
   import { getContext } from "svelte";
   import { stores } from "@sapper/app";
@@ -26,6 +28,28 @@
       card = { isEmpty: true };
     }
   }
+  
+  let isCopied = false;
+  let isShowToast = false;
+  let toastShowId;
+
+  const handleClickCopyUrl = () => {
+    if(isShowToast){
+      return false;
+    }
+    else {
+      isShowToast = true;
+    
+      toastShowId = setTimeout(() => {
+        isShowToast = false;
+      },1500);
+    }
+  };
+
+  $: {
+    console.log({isCopied})
+    console.log({isShowToast})
+  }
 </script>
 
 <section class="frame_wrapper">
@@ -34,11 +58,17 @@
       <div class="card_wrapper">
         <WideCard title={card.title} content={card.text} imageUrl={cardImage} />
       </div>
-      <div>
+      <div id="sns_button_container">
         <KakaoButton
+          className="kakao_button"
           description={"#성경 #하나님 #2022년 #감사 #기도 #코로나 #온택트"}
           title={"2022년 성경 말씀 나누기"}
           imageUrl={"https://hanmoa-bucket.s3.ap-northeast-2.amazonaws.com/hispick/introduce_illustration.png"}
+          link={`https://2022word.com/card?id=${$page.query.id || card.showId}`}
+        />
+        <CopyUrlButton 
+          onAfterClick={handleClickCopyUrl}
+          isCopied={isCopied} 
           link={`https://2022word.com/card?id=${$page.query.id || card.showId}`}
         />
       </div>
@@ -48,6 +78,9 @@
       <div class="empty_description">
         새로운 <a href="." rel="prefetch">말씀</a>을 요청해보세요
       </div>
+    {/if}
+    {#if isShowToast}
+      <Toast title="복사 성공!" message="지인들과 나누어 보세요^^"/>
     {/if}
   </BackgroundFrame>
 </section>
@@ -96,5 +129,15 @@
     animation: fadein 3s;
     width: 280px;
     margin: 0 auto;
+  }
+
+  #sns_button_container{
+    display: flex;
+    justify-content: center;
+    margin-left: 42px;
+  }
+
+  #sns_button_container :global(.kakao_button) {
+    margin-right: 8px;
   }
 </style>
