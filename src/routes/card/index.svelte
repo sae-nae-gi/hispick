@@ -45,11 +45,6 @@
       },1500);
     }
   };
-
-  $: {
-    console.log({isCopied})
-    console.log({isShowToast})
-  }
 </script>
 
 <section class="frame_wrapper">

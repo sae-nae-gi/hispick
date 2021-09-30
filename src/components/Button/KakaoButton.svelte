@@ -40,8 +40,6 @@
     })
     }
   })
-  
-  console.log({link})
 </script>
 <div id="kakao_button_container" class="{className}">
   <a id="kakao_link_button">
