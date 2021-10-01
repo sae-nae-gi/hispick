@@ -9,13 +9,14 @@
 
 html,body {
 	font-family: SangSangFlowerRoad, Noto Sans KR, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	height: 100%;
 }
 	/* background-color: #3c3b3f; */
 
 body {
 	background-color: #f0f5f9;
 	margin: 0;
-	font-family: SangSangFlowerRoad Noto Sans KR, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-family: SangSangFlowerRoad, Noto Sans KR, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
 	color: #333;
@@ -23,7 +24,6 @@ body {
 }
 
 * {
-	font-family: Noto Sans KR, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	box-sizing: border-box;
 }
 
