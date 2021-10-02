@@ -90,6 +90,10 @@
     }
   }
 
+  .empty_description a {
+    text-decoration: none;
+    color: blue;
+  }
   .override_background_frame {
     margin: 0;
   }
