@@ -8,6 +8,7 @@
   {#each cardsContext.contents as card}
     <a href="/card?id={card.showId}">{card.showId}</a>
   {/each}
+  <a href="/sitemap.xml">sitemap</a>
 </div>
 
 <style>
