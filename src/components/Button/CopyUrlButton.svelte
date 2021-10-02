@@ -28,7 +28,6 @@
     justify-content: center;
     align-items: center;
     background-color: #0acf83;
-    font-family: SangSangFlowerRoad, Noto Sans KR, Roboto;
     font-size: 20px;
     width: 68px;
     height: 68px;

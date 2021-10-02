@@ -27,7 +27,6 @@
     margin: 10px 0;
   }
   .container * {
-    font-family: SangSangFlowerRoad, Noto Sans KR, Roboto;
     text-align: center;
 
     & + div {

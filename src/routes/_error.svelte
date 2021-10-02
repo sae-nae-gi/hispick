@@ -19,7 +19,6 @@
 
 <style>
   * {
-    font-family: SangSangFlowerRoad, Noto Sans KR, Roboto;
   }
   .not_found {
     max-width: 450px;

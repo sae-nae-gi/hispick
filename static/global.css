@@ -7,6 +7,13 @@
 	src: url("SangSangFlowerRoad.otf");
 }
 
+@font-face {
+	font-family: 'Dongle-Regular';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108_2@1.0/Dongle-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 html,body {
 	font-family: SangSangFlowerRoad, Noto Sans KR, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	height: 100%;
@@ -16,7 +23,7 @@ html,body {
 body {
 	background-color: #f0f5f9;
 	margin: 0;
-	font-family: SangSangFlowerRoad, Noto Sans KR, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-family: Dongle-Regular, Noto Sans KR, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
 	color: #333;

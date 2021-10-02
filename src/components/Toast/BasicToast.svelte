@@ -38,13 +38,11 @@
   }
 
   .title {
-    font-family: SangSangFlowerRoad, Noto Sans KR, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 20px;
     font-weight: 700;
   }
   
   .description {
-    font-family: SangSangFlowerRoad, Noto Sans KR, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 20px;
     margin-top: 16px;
   }
