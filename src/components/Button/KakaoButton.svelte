@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, afterUpdate } from "svelte";
   export let description;
   export let title;
   export let imageUrl;
@@ -7,9 +7,14 @@
   export let className;
 
   onMount(() => {
-    if(Kakao) {
-      Kakao.init("473bade5b3c7ef30dc351e6df9b30045");
+    if(Kakao && !Kakao.isInitialized()) {
 
+      Kakao.init("473bade5b3c7ef30dc351e6df9b30045");
+    }
+  })
+
+  afterUpdate(() => {
+    if(Kakao.isInitialized()){
       Kakao.Link.createDefaultButton({
       container: "#kakao_link_button",
       objectType: "feed",
