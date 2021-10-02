@@ -31,7 +31,6 @@
   }
   .card_wrapper * {
     color: #fff;
-    font-family: SangSangFlowerRoad, Noto Sans KR, Roboto;
     width: 100%;
     padding: 0 16px;
     margin: 20px 0 0 0;
@@ -43,7 +42,7 @@
     left: 20px;
   }
   .card_title {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 700;
     text-align: right;
     padding-right: 40px;
@@ -51,7 +50,7 @@
   }
 
   .card_content {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 400;
     white-space: pre;
     margin-left: 16px;

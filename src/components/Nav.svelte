@@ -50,7 +50,7 @@
   }
 
   a {
-    font-family: SangSangFlowerRoad, Noto Sans KR, Roboto;
+    font-size: 20px;
     text-decoration: none;
     padding: 1em 0.5em;
     display: block;

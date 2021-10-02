@@ -79,14 +79,16 @@
 	}
 
 	.project_introduce_title {
-		font-family: SangSangFlowerRoad, Noto Sans KR, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-		font-size: 20px;
+		font-size: 28px;
 		line-height: 24px;
 		margin-top: 12px;
 		animation: fadein 2s;
 	}
 	.project_introduce {
-		line-height: 24px;
+		line-height: 28px;
+		font-size: 25px;
+		word-break: keep-all;
+    white-space: pre-wrap;
 		margin-top: 12px;
 		animation: fadein 4s;
 

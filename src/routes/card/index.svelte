@@ -112,10 +112,8 @@
   .empty_description {
     text-align: center;
     font-size: 28px;
-    font-family: SangSangFlowerRoad, Noto Sans KR, Roboto;
 
     > a {
-      font-family: SangSangFlowerRoad, Noto Sans KR, Roboto;
       font-weight: 700;
     }
   }
