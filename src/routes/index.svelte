@@ -79,23 +79,6 @@
   });
 </script>
 
-<svelte:head>
-  <title>2022 송구영신예배 말씀 뽑기</title>
-  <meta name="description" content="2022년 내게 주신 성경말씀 뽑기" />
-  <meta
-    name="keywords"
-    content="성경말씀뽑기,성경,말씀,힘이 되는,하나님,예수님,송구영신예배,2022년,2022년 말씀뽑기,2022년 말씀 뽑기"
-  />
-  <meta http-equiv="Distribution" content="Team Hispick" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="2022년 말씀뽑기" />
-  <meta property="og:description" content="내게 주신 성경 말씀을 확인해보세요!" />
-  <meta property="og:image" content="og_image.png" />
-  <meta property="og:url" content="https://2022word.com" />
-  <meta property="twitter:title" content="2022년 말씀뽑기" />
-  <meta property="twitter:description" content="2022년 내게 주신 성경 말씀을 확인해보세요!" />
-  <meta property="twitter:image" content="og_image.png" />
-</svelte:head>
 <BackgroundFrame>
   <MainHeader title={"2022"} description={["내게 보내주신", "하나님의 말씀"]} />
   <section class="introduce_illustration_cover">
