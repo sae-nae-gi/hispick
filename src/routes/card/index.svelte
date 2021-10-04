@@ -8,9 +8,9 @@
   import { getContext } from "svelte";
   import { stores } from "@sapper/app";
   import { cardStore } from "../../store/card.store";
-  import { cards as cardImages } from "../../utils/pickCards";
+  import { getRandomImage } from "../../utils/pickCards";
 
-  const cardImage = cardImages[Math.trunc(Math.random() * cardImages.length)];
+  const {card: cardImage, color} = getRandomImage();
   const cardsContext = getContext("cards");
   const { page } = stores();
   let card;
@@ -51,7 +51,16 @@
   <BackgroundFrame className="override_background_frame">
     {#if !card.isEmpty}
       <div class="card_wrapper">
-        <WideCard title={card.title} content={card.text} imageUrl={cardImage} />
+        <WideCard 
+          title={card.title} 
+          content={card.text} 
+          imageUrl={cardImage} 
+          textColor={
+            ["yellow"].includes(color) ? "blue": 
+            ["sky"].includes(color) ? "#483d8b" :
+            ["pink", "purple"].includes(color) ? "#063970" : "white"
+          }
+        />
       </div>
       <div id="sns_button_container">
         <KakaoButton

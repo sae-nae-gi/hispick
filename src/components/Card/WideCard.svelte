@@ -12,12 +12,16 @@
   export let title: WideCardProps["title"];
   export let content: WideCardProps["content"];
   export let imageUrl: WideCardProps["imageUrl"] = "";
+  export let textColor: string;
 </script>
 
-<div class="card_wrapper {className}" style="background-image: url({imageUrl})">
+<div 
+  class="card_wrapper {className}" 
+  style="background-image: url({imageUrl});"
+>
   <div class="card_text_box">
-    <div class="card_content">{content}</div>
-    <h3 class="card_title">{title}</h3>
+    <div class="card_content" style="color: {textColor};">{content}</div>
+    <h3 class="card_title" style="color: {textColor};">{title}</h3>
   </div>
 </div>
 
@@ -45,7 +49,7 @@
     font-size: 21px;
     font-weight: 700;
     text-align: right;
-    padding-right: 40px;
+    padding-right: 58px;
     margin-top: 16px;
   }
 

@@ -25,7 +25,13 @@ import star_pink from "../../static/card/star-pink.png"
 import star_purple from "../../static/card/star-purple.png"
 import star_sky from "../../static/card/star-sky.png"
 import star_yellow from "../../static/card/star-yellow.png"
-
+import post_black from "../../static/card/post-black.png";
+import post_blue from "../../static/card/post-blue.png";
+import post_gold from "../../static/card/post-gold.png";
+import post_green from "../../static/card/post-green.png";
+import post_pink from "../../static/card/post-pink.png";
+import post_purple from "../../static/card/post-purple.png";
+import post_sky from "../../static/card/post-sky.png";
 
 export {
   simple_black,
@@ -55,8 +61,153 @@ export {
   star_purple,
   star_sky,
   star_yellow,
+  post_black,
+  post_blue,
+  post_gold,
+  post_green,
+  post_pink,
+  post_purple,
+  post_sky,
 }
 
+export const cardsDictArray = [
+  {
+    card: tree_black,
+    color: "black",
+  },
+  {
+    card: tree_blue,
+    color: "blue",
+  },
+  {
+    card: tree_gold,
+    color: "gold",
+  },
+  {
+    card: flower_purple ,
+    color: "purple",
+  },
+  {
+    card: flower_purple,
+    color: "purple",
+  },
+  {
+    card: flower_sky,
+    color: "sky",
+  },
+  {
+    card: flower_yellow,
+    color: "yellow",
+  },
+  {
+    card: simple_black,
+    color: "black",
+  },
+  {
+    card: simple_gold,
+    color: "gold",
+  },
+  {
+    card: simple_pink,
+    color: "pink",
+  },
+  {
+    card: simple_sky,
+    color: "sky",
+  },
+  {
+    card: simple_purple,
+    color: "purple",
+  },
+  {
+    card: simple_yellow,
+    color: "yellow",
+  },
+  {
+    card: tree_pink,
+    color: "pink",
+  },
+  {
+    card: tree_purple,
+    color: "purple",
+  },
+  {
+    card: tree_sky,
+    color: "sky",
+  },
+  {
+    card: tree_yellow,
+    color: "yellow",
+  },
+  {
+    card: flower_black,
+    color: "black",
+  },
+  {
+    card: flower_blue,
+    color: "blue",
+  },
+  {
+    card: flower_gray,
+    color: "gray",
+  },
+  {
+    card: flower_pink,
+    color: "pink",
+  },
+  {
+    card: star_black,
+    color: "black",
+  },
+  {
+    card: star_blue,
+    color: "blue",
+  },
+  {
+    card: star_pink,
+    color: "pink",
+  },
+  {
+    card: star_purple,
+    color: "purple",
+  },
+  {
+    card: star_sky,
+    color: "sky",
+  },
+  {
+    card: star_yellow,
+    color: "yellow",
+  },
+  {
+    card: post_black,
+    color: "black",
+  },
+  {
+    card: post_blue,
+    color: "blue",
+  },
+  {
+    card: post_gold,
+    color: "gold",
+  },
+  {
+    card: post_green,
+    color: "green",
+  },
+  {
+    card: post_pink,
+    color: "pink",
+  },
+  {
+    card: post_purple,
+    color: "purple",
+  },
+  {
+    card: post_sky,
+    color: "sky",
+  }
+];
 export const cards = [
   tree_black,
   tree_blue,
@@ -85,7 +236,18 @@ export const cards = [
   star_purple,
   star_sky,
   star_yellow,
-]
+  post_black,
+  post_blue,
+  post_gold,
+  post_green,
+  post_pink,
+  post_purple,
+  post_sky,
+];
+
+export const getRandomImage = () => {
+  return cardsDictArray[Math.trunc(Math.random() * cardsDictArray.length)]
+}
 
 export const getRandomCard = (number) => {
   if (number <= 0) {
