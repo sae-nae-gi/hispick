@@ -27,7 +27,6 @@ import star_sky from "../../static/card/star-sky.png"
 import star_yellow from "../../static/card/star-yellow.png"
 import post_black from "../../static/card/post-black.png";
 import post_blue from "../../static/card/post-blue.png";
-import post_gold from "../../static/card/post-gold.png";
 import post_green from "../../static/card/post-green.png";
 import post_pink from "../../static/card/post-pink.png";
 import post_purple from "../../static/card/post-purple.png";
@@ -63,7 +62,6 @@ export {
   star_yellow,
   post_black,
   post_blue,
-  post_gold,
   post_green,
   post_pink,
   post_purple,
@@ -188,10 +186,6 @@ export const cardsDictArray = [
     color: "blue",
   },
   {
-    card: post_gold,
-    color: "gold",
-  },
-  {
     card: post_green,
     color: "green",
   },
@@ -238,7 +232,6 @@ export const cards = [
   star_yellow,
   post_black,
   post_blue,
-  post_gold,
   post_green,
   post_pink,
   post_purple,
