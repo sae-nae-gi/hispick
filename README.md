@@ -10,7 +10,7 @@ HISPICK is a project that helps people share the word of the Bible at their resp
 서비스는 아래 링크를 통해 사용하실 수 있습니다.
 
 Please visit link below.
-> https://2022word.com
+> https://2022hispick.com
 
 
 
