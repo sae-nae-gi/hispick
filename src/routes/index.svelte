@@ -80,7 +80,7 @@
 </script>
 
 <BackgroundFrame>
-  <MainHeader title={"2022"} description={["내게 보내주신", "하나님의 말씀"]} />
+  <MainHeader title={"2022"} description={["내 삶의 지표가 되는", "하나님의 말씀"]} />
   <section class="introduce_illustration_cover">
     <article>
       <div class="introduce_illustration_image" style="background-image: url({introduceIllustration});" />
